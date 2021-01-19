@@ -2,4 +2,64 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+#navbar{
+    font-size: 30px;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+#nav{
+    background-color: teal;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+#cardTitle{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+}
+
+#cardBody{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+}
+
+#admin{ 
+    border-color: teal;
+    background-color: black;
+    color:white;
+    border-width: 0.2em;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+#link{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+    color: white;
+}
+
+#usernameLabel{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+    color: white;
+}
+
+#chirpLabel{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+    color: white;
+}
+
+#createButton{
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+    background-color:  teal;
+    color: white
+}
+
+#goBack{
+     font-family: 'Yusei Magic', sans-serif;
+    font-size: larger;
+    background-color:  teal;
+    color: white
+}
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
