@@ -24,7 +24,7 @@ const Chirps: React.FC = props => {
                 <div className="card-body">
                     <h5 id="cardTitle" className="card-title">{chirp.user}</h5>
                     <p id="cardBody" className="card-text m-4">{chirp.msg}</p>
-                    <Link to = {'/' + chirp.id}><button id="admin" className="btn-sm">Admin Options</button></Link>
+                    <Link to = {'/' + chirp.id}><button id="admin" className="btn">Admin Options</button></Link>
                 </div>
                 </div> 
                 </div>

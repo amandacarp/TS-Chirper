@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { RouteComponentProps, useParams } from 'react-router-dom';
-import { IChirp } from './Chirps'
+import { RouteComponentProps } from 'react-router-dom';
+import Chirps, { IChirp } from './Chirps'
 
 export interface singlechirpProps extends RouteComponentProps<{ id: string }> { };
 
@@ -22,20 +22,27 @@ const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { i
         getsingleChirp();
     }, [id])
 
+    const deleteChirp = async () => {
+        const res = await fetch(`/api/chirps/${id}`, {
+            method: 'delete'
+        });
+        return await res.json();
+    }
+
     return (
-        <>
-            <div className="container">
-                <div className="row">
-                    <div className="card col-12 mb-4" key={chirp.id}>
-                        <div className="card-body">
-                            <h5 id="cardTitle" className="card-title">{chirp.user}</h5>
-                            <p id="cardBody" className="card-text m-4">{chirp.msg}</p>
-                            <button id="goBack" className="btn-sm" onClick={() => history.goBack()}> Go Back</button>
-                        </div>
-                    </div>
-                </div>
+        <div className="container">
+            <div className="form-group">
+                <label id="usernameLabel">Edit your Username</label>
+                <input type="text" className="form-control" placeholder={chirp.user} />
             </div>
-        </>
+            <div className="form-group">
+                <label id="chirpLabel">What Would You Like to Edit?</label>
+                <textarea rows="3" className="form-control" placeholder={chirp.msg}></textarea>
+            </div>
+            <button id="chirpButton" className="btn-sm mr-4"> Save Edit</button>
+            <button id="chirpButton" className="btn-sm mr-4" onClick={() => deleteChirp()}> Delete Chirp</button>
+            <button id="chirpButton" className="btn-sm" onClick={() => history.goBack()}> Go Back</button>
+        </div>
     )
 }
 

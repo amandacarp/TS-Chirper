@@ -6,22 +6,22 @@ import Nav from './components/Navbar';
 import CreateChirp from './components/CreateChirp';
 import SingleChirp from './components/SingleChirp';
 
-const App: React.FC <IAppProps> = props => {
+const App: React.FC<IAppProps> = props => {
 
 	return (
-			<Router>
-				<main className="container">
-					<Nav />
+		<Router>
+			<>
+				<Nav />
 				<Switch>
-					<Route exact path ='/' component={Chirps} />
-					<Route exact path = '/chirp/add' component={CreateChirp} />
-					<Route exact path = '/:id' component={SingleChirp} />
+					<Route exact path='/' component={Chirps} />
+					<Route exact path='/chirp/add' component={CreateChirp} />
+					<Route exact path='/:id' component={SingleChirp} />
 				</Switch>
-				</main>
-			</Router>
+			</>
+		</Router>
 	)
 };
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export default App;
