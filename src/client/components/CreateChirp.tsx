@@ -1,10 +1,17 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 
 export interface createChirpProps extends RouteComponentProps<{ id: string }> { };
 
 const CreateChirp: React.FC<createChirpProps> = ({ history, match: { params: { id } } }) => {
+
+    const createChirp = async () => {
+        const r = await fetch ('/api/chirps', {
+            method: 'POST'
+        })
+    }
 
 
     return (
