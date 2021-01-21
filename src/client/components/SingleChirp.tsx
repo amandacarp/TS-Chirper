@@ -57,6 +57,10 @@ const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { i
             })
         })
         .then(() => {history.push('/')})
+        .catch(err => {
+            alert('Error: Chirp not edited');
+            console.log(err)
+        })
     }
 
     //return card html to display chirp data

@@ -20,6 +20,10 @@ const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
             })
         })
         .then(() => {history.push('/')})
+        .catch(err => {
+            alert('Error: Could Not Post Chirp');
+            console.log(err)
+        })
     }
 
 
