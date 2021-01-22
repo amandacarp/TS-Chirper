@@ -6,7 +6,7 @@ router.get('/:id?', (req, res, next) => {
     const id = req.params.id
     const chirps = id ? chirpStore.GetChirp(id) : chirpStore.GetChirps()
     if(id){
-        res.json({id: id, ...chirps}) 
+        res.json({id, ...chirps}) 
     } else {
         const newChirps = Object.keys(chirps).map(key => {
             return {

@@ -37,8 +37,12 @@ const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { i
             })
         })
         .then(() => {history.push('/')})
-        .catch(err => {
-            alert('Error: Chirp not deleted');
+        .catch(err => {Swal.fire({
+            title: `Error: Chirp not deleted`,
+            icon: 'error',
+            text: err,
+            timer: 1500
+        })
             console.log(err)
         })
     }
@@ -57,8 +61,12 @@ const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { i
             })
         })
         .then(() => {history.push('/')})
-        .catch(err => {
-            alert('Error: Chirp not edited');
+        .catch(err => {Swal.fire({
+            title: `Error: Chirp not edited`,
+            icon: 'error',
+            text: err,
+            timer: 1500
+        })
             console.log(err)
         })
     }

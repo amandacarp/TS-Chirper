@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Chirps: React.FC = () => {
 
-    const [chirps, setChirps] = useState<IChirp[]>([]);
+    const [chirps, setChirps] = useState<IChirp[]>(null);
 
     const getChirps = async () => {
         const r = await fetch("http://localhost:3000/api/chirps")
@@ -16,7 +16,7 @@ const Chirps: React.FC = () => {
 
     return (
         <>
-            {chirps.map(chirp => {
+            {chirps?.map(chirp => {
                 return (
                     <>
                         <div key={chirp?.id} className="container" >
