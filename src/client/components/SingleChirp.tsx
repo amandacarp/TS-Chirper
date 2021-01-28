@@ -4,24 +4,26 @@ import { RouteComponentProps } from 'react-router-dom';
 import { IChirp } from './Chirps'
 import Swal from 'sweetalert2'
 
-export interface singlechirpProps extends RouteComponentProps<{ id: string }> { };
+export interface singleChirpProps extends RouteComponentProps<{ id: string }> { };
 
-const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { id } } }) => {
-    const [chirp, setsingleChirp] = useState<IChirp>({
+const singleChirp: React.FC<singleChirpProps> = ({ history, match: { params: { id } } }) => {
+    const [chirp, setSingleChirp] = useState<IChirp>({
         id: null,
         content: null,
-        location: null
+        location: null,
+        _created: null,
+        userid: null
     });
 
     //fetch api data for a single chirp
-    const getsingleChirp = async () => {
+    const getSingleChirp = async () => {
         const r = await fetch(`/api/chirps/${id}`);
         const singleChirp = await r.json();
-        setsingleChirp(singleChirp);
-    }; 
+        setSingleChirp(singleChirp);
+    };
 
     useEffect(() => {
-        getsingleChirp();
+        getSingleChirp();
     }, [id])
 
     //use fetch to delete a single chirp based on id
@@ -77,16 +79,16 @@ const singleChirp: React.FC<singlechirpProps> = ({ history, match: { params: { i
     return (
         <div className="container">
             <div className="form-group">
-                <label id="usernameLabel">Edit your Location</label>
+                <label id="label">Edit your Location</label>
                 <input type="text" className="form-control" placeholder={chirp?.location} onChange={event => setLocation(event.target.value)} />
             </div>
             <div className="form-group">
-                <label id="chirpLabel">What Would You Like to Edit?</label>
+                <label id="label">What Would You Like to Edit?</label>
                 <textarea rows="3" className="form-control" placeholder={chirp?.content} onChange={event => setContent(event.target.value)}></textarea>
             </div>
-            <button id="chirpButton" className="btn-sm mr-4" onClick={() => editChirp()}> Save Edit</button>
-            <button id="chirpButton" className="btn-sm mr-4" onClick={() => deleteChirp()}> Delete Chirp</button>
-            <button id="chirpButton" className="btn-sm" onClick={() => history.goBack()}> Go Back</button>
+            <button id="button" className="btn mr-4 shadow" onClick={() => editChirp()}> Save Edit</button>
+            <button id="button" className="btn mr-4 shadow" onClick={() => deleteChirp()}> Delete Chirp</button>
+            <button id="button" className="btn shadow" onClick={() => history.goBack()}> Go Back</button>
         </div>
     )
 }

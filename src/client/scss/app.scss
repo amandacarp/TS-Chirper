@@ -1,71 +1,77 @@
 #navbar{
     font-size: 30px;
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #nav{
     background-color: teal;
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-#cardTitle{
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
+#card{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #cardBody{
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
+    font-family: 'Architects Daughter', cursive;
 }
 
-#admin{ 
-    font-family: 'Yusei Magic', sans-serif;
-    background-color:  teal;
-    color: white
-}
-
-#usernameLabel{
-    font-family: 'Yusei Magic', sans-serif;
+#label{
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: larger;
     color: white;
 }
 
-#chirpLabel{
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
-    color: white;
+#button{
+    font-family: 'Roboto Condensed', sans-serif;
+    background: teal;
+    box-shadow: 0 0 1px #ccc;
+    transition: all 0.3s ease-in-out;
+    border: 0px;
+    color: #fff;
 }
 
-#createButton{
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
-    background-color:  teal;
-    color: white
-}
-
-#chirpButton{
-     font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
-    background-color:  teal;
-    color: white
+#button:hover{
+    transform: scale(1.1);
+    background: white;
+    color: teal
 }
 
 #postLink {
-    font-family: 'Yusei Magic', sans-serif;
-    font-size: larger;
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: white;
     color: teal;
     float: r;
+    box-shadow: 0 0 1px #ccc;
+    transition: all 0.3s ease-in-out;
+    border: 0px;
+    text-decoration: none;
+
+}
+
+#postLink:hover{
+    transform: scale(1.1);
+    background: teal;
+    color: white
+    
 }
 
 #chirppic{
     border-radius: 30%;
-    opacity: 0.8;
+    opacity: 0.9;
+    box-shadow: 0 0 1px #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+#chirppic:hover{
+    transform: scale(1.1);
+    opacity: 100%;
+
 }
 
 #latest {
     color: white;    
-    font-family: 'Yusei Magic', sans-serif;
-
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
 }
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

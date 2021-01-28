@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 
-export interface createChirpProps extends RouteComponentProps<{ id: string }> { };
+export interface createChirpProps extends RouteComponentProps{ };
 
 const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
 
@@ -11,34 +11,34 @@ const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
     const [content, setContent] = useState('')
 
     const createChirp = async () => {
-        const r = await fetch ('/api/chirps', {
+        const r = await fetch('/api/chirps', {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                content, 
+                content,
                 location,
             })
         })
-        .then(() => {history.push('/')})
-        .catch(err => {
-            alert('Error: Could Not Post Chirp');
-            console.log(err)
-        })
+            .then(() => { history.push('/') })
+            .catch(err => {
+                alert('Error: Could Not Post Chirp');
+                console.log(err)
+            })
     }
 
 
     return (
         <div className="container">
             <div className="form-group">
-                <label id="usernameLabel">Enter your Location</label>
+                <label id="label">Enter your Location</label>
                 <input id="username" type="text" className="form-control" onChange={event => setLocation(event.target.value)} />
             </div>
             <div className="form-group">
-                <label id="chirpLabel">What Would You Like to Chirp?</label>
+                <label id="label">What Would You Like to Chirp?</label>
                 <textarea rows="3" className="form-control" onChange={event => setContent(event.target.value)}></textarea>
             </div>
-            <button id="createButton" type="button" className="btn mr-4" onClick={() => createChirp()}>Post your Chirp</button>
-            <button id="createButton" type="button" className="btn" onClick={() => history.goBack()}> Go Back</button>
+            <button id="button" type="button" className="btn mr-4" onClick={() => createChirp()}>Post your Chirp</button>
+            <button id="button" type="button" className="btn" onClick={() => history.goBack()}> Go Back</button>
         </div>
     )
 }
