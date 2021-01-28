@@ -19,7 +19,7 @@ const singleChirp: React.FC<singleChirpProps> = ({ history, match: { params: { i
     const getSingleChirp = async () => {
         const r = await fetch(`/api/chirps/${id}`);
         const singleChirp = await r.json();
-        setSingleChirp(singleChirp);
+        setSingleChirp(singleChirp[0]);
     };
 
     useEffect(() => {

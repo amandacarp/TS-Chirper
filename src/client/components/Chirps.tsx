@@ -1,3 +1,4 @@
+import moment from 'moment';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
@@ -19,10 +20,10 @@ const Chirps: React.FC = () => {
             <div className="container mb-4">
                 <h1 id="latest">Latest Chirps...</h1>
             </div>
-            {chirps?.map(chirp => {
+            {chirps?.reverse().map(chirp => {
                 return (
                     <>
-                        <div key={chirp?.id} className="container" id="card" >
+                        <div key={chirp?.id} className="container" id="card">
                             <div className="row">
                                 <div className="card col-12 mb-4" >
                                     <div className="card-header">User{chirp?.userid} from {chirp?.location} chirps...</div>
@@ -30,7 +31,7 @@ const Chirps: React.FC = () => {
                                         <p className="card-text" id="cardBody">{chirp?.content}</p>
                                     </div>
                                     <div className="card-footer text-muted d-flex justify-content-between">
-                                        <p className="card-text">Created on {chirp?._created}</p>
+                                        <p className="card-text">Created {moment(chirp?._created).startOf('hour').fromNow()} at {moment(chirp?._created).format('h:mm:ss a')}</p>
                                         <Link id="button" className="btn shadow" to={'/' + chirp?.id}>Admin Options</Link>
                                     </div>
                                 </div>

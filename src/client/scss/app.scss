@@ -1,11 +1,12 @@
-#navbar{
-    font-size: 30px;
-    font-family: 'Roboto Condensed', sans-serif;
+#body{
+    background-color: rgb(21, 32, 43);
 }
 
-#nav{
-    background-color: black;
+.navbar{
+    font-size: 30px;
     font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    background-color: rgb(21, 32, 43);
 }
 
 #card{
@@ -24,35 +25,36 @@
 
 #button{
     font-family: 'Roboto Condensed', sans-serif;
-    background: black;
+    background:rgb(29, 161, 242);
     box-shadow: 0 0 1px #ccc;
     transition: all 0.3s ease-in-out;
     border: 0px;
     color: #fff;
+    border-radius: 9999px;
 }
 
 #button:hover{
     transform: scale(1.1);
     background: white;
-    color: teal
+    color: black
 }
 
 #postLink {
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: white;
-    color: teal;
+    background-color:rgb(29, 161, 242);
+    color: white;
     float: r;
     box-shadow: 0 0 1px #ccc;
     transition: all 0.3s ease-in-out;
     border: 0px;
     text-decoration: none;
-
+    border-radius: 9999px;
 }
 
 #postLink:hover{
     transform: scale(1.1);
-    background: teal;
-    color: white
+    background:white;
+    color: black
     
 }
 
