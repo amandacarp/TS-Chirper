@@ -58,4 +58,14 @@
     float: r;
 }
 
+#chirppic{
+    border-radius: 30%;
+    opacity: 0.8;
+}
+
+#latest {
+    color: white;    
+    font-family: 'Yusei Magic', sans-serif;
+
+}
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

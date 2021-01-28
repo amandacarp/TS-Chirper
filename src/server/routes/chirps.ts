@@ -4,61 +4,52 @@ import db from '../db'
 const router = express.Router();
 
 
-router.get('/api/chirps', async (req, res) => {
+router.get('/:id?', async (req, res) => {
+    const id = Number(req.params.id);
     try {
-        res.json(await db.Chirps.all());
+        const result = id ? await db.Chirps.by_id(id) : await db.Chirps.all();
+        res.json(result);
     } catch (e) {
-        console.log(e)
-        res.sendStatus(500);
+        res.status(500).send(e)
     }
 });
 
+router.delete('/:id', async (req, res) => {
+    const id = Number(req.params.id);
+    try {
+        const result = await db.Chirps.delete_chirp(id);
+        res.json(result);
+        console.log(`Chirp ${id} deleted!`)
+    } catch (e) {
+        res.status(500).send(e)
+    }
+});
+
+router.post('/', async (req, res) => {
+    const userid = 1
+    const chirpText = req.body.content
+    const chirpLocation = req.body.location
+    try {
+        const result = await db.Chirps.add_chirp(userid, chirpText, chirpLocation);
+        res.json(result);
+        console.log(`Chirp added!`)
+    } catch (e) {
+        res.status(500).send(e)
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const chirpText = req.body.content
+    const chirpLocation = req.body.location
+    try {
+        const result = await db.Chirps.edit_chirp(chirpText, chirpLocation, id);
+        res.json(result);
+        console.log(`Chirp ${id} edited!`)
+    } catch (e) {
+        res.status(500).send(e)
+    }
+})
+
 
 export default router;
-
-
-
-
-
-
-
-// const chirpStore = require('../chirpstore');
-
-
-// router.get('/:id?', (req, res, next) => {
-//     const id = req.params.id
-//     const chirps = id ? chirpStore.GetChirp(id) : chirpStore.GetChirps()
-//     if(id){
-//         res.json({id, ...chirps}) 
-//     } else {
-//         const newChirps = Object.keys(chirps).map(key => {
-//             return {
-//                 id:key,
-//                 user: chirps[key].user,
-//                 msg: chirps[key].msg
-//             }
-//         })
-//         newChirps.pop()
-//         res.json(newChirps.reverse())
-//     }   
-// })
-
-// router.post('/', (req, res, next) => {
-//     const chirp = req.body
-//     chirpStore.CreateChirp(chirp)
-//     res.send("Chirp created")
-// })
-
-// router.put('/:id', (req, res, next) => {
-//     const chirpID = req.params.id;
-//     const chirpInfo = req.body
-//     chirpStore.UpdateChirp(chirpID, chirpInfo)
-//     res.send(`chirp ${chirpID} edited`);
-// })
-
-// router.delete('/:id', (req, res, next) => {
-//     const chirpID = req.params.id;
-//     chirpStore.DeleteChirp(chirpID);
-//     res.send(`chirp ${chirpID} deleted!`)
-// } )
-

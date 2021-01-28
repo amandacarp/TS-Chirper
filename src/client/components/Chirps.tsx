@@ -16,15 +16,19 @@ const Chirps: React.FC = () => {
 
     return (
         <>
+    <div className="container mb-4" id="latest">
+        <h1>Latest Chirps...</h1>
+        </div>
             {chirps?.map(chirp => {
                 return (
                     <>
+                    
                         <div key={chirp?.id} className="container" >
                             <div className="row">
                                 <div className="card col-12 mb-4" >
-                                    <div id="cardTitle" className="card-header">{chirp?.user} chirps...</div>
+                                    <div id="cardTitle" className="card-header">{chirp?.location} chirps...</div>
                                     <div className="card-body">
-                                        <p id="cardBody" className="card-text">{chirp?.msg}</p>
+                                        <p id="cardBody" className="card-text">{chirp?.content}</p>
                                     </div>
                                     <div className="card-footer text-right">
                                         <Link to={'/' + chirp?.id}><button id="admin" className="btn">Admin Options</button></Link>
@@ -42,8 +46,8 @@ const Chirps: React.FC = () => {
 
 export interface IChirp {
     id: number,
-    user: string,
-    msg: string
+    content: string,
+    location: string
 }
 
 export default Chirps;

@@ -7,16 +7,16 @@ export interface createChirpProps extends RouteComponentProps<{ id: string }> { 
 
 const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
 
-    const [user, setUser] = useState('')
-    const [msg, setMessage] = useState('')
+    const [location, setLocation] = useState('')
+    const [content, setContent] = useState('')
 
     const createChirp = async () => {
         const r = await fetch ('/api/chirps', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                user, 
-                msg
+                content, 
+                location,
             })
         })
         .then(() => {history.push('/')})
@@ -30,12 +30,12 @@ const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
     return (
         <div className="container">
             <div className="form-group">
-                <label id="usernameLabel">Enter your Username</label>
-                <input id="username" type="text" className="form-control" onChange={event => setUser(event.target.value)} />
+                <label id="usernameLabel">Enter your Location</label>
+                <input id="username" type="text" className="form-control" onChange={event => setLocation(event.target.value)} />
             </div>
             <div className="form-group">
                 <label id="chirpLabel">What Would You Like to Chirp?</label>
-                <textarea rows="3" className="form-control" onChange={event => setMessage(event.target.value)}></textarea>
+                <textarea rows="3" className="form-control" onChange={event => setContent(event.target.value)}></textarea>
             </div>
             <button id="createButton" type="button" className="btn mr-4" onClick={() => createChirp()}>Post your Chirp</button>
             <button id="createButton" type="button" className="btn" onClick={() => history.goBack()}> Go Back</button>
