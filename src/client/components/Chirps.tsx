@@ -22,7 +22,7 @@ const Chirps: React.FC = () => {
             </div>
             {chirps?.reverse().map(chirp => {
                 return (
-                    <>
+                    
                         <div key={chirp?.id} className="container" id="card">
                             <div className="row">
                                 <div className="card col-12 mb-4" >
@@ -37,7 +37,6 @@ const Chirps: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </>
                 )
             })}
         </>

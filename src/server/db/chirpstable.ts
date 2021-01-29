@@ -11,5 +11,5 @@ export default {
     by_id,
     delete_chirp,
     add_chirp,
-    edit_chirp
+    edit_chirp,
 }
