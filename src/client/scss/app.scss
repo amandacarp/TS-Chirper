@@ -33,6 +33,23 @@
     border-radius: 9999px;
 }
 
+#editButton {
+    font-family: 'Roboto Condensed', sans-serif;
+    background:rgb(29, 161, 242);
+    box-shadow: 0 0 1px #ccc;
+    transition: all 0.3s ease-in-out;
+    border: 0px;
+    color: #fff;
+    border-radius: 9999px;
+    font-weight: 900;
+}
+
+#editButton:hover{
+    transform: scale(1.1);
+    background: white;
+    color: black
+}
+
 #button:hover{
     transform: scale(1.1);
     background: white;
