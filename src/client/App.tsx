@@ -6,7 +6,7 @@ import Nav from './components/Navbar';
 import CreateChirp from './components/CreateChirp';
 import SingleChirp from './components/SingleChirp';
 
-const App: React.FC<IAppProps> = props => {
+const App: React.FC= () => {
 
 	return (
 		<Router>
@@ -22,6 +22,5 @@ const App: React.FC<IAppProps> = props => {
 	)
 };
 
-export interface IAppProps { }
 
 export default App;
