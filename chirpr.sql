@@ -22,7 +22,13 @@ foreign key (userid)
 references users(id);
 
 
+<<<<<<< HEAD
 select *
+=======
+select 
+	c.content,
+    u.name
+>>>>>>> 9d9d2231fa7bab4ec47be205c9173bb73561be93
 from Chirps c
 join users u on u.id = c.userid;
 
