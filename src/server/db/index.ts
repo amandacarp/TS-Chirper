@@ -1,5 +1,6 @@
 import * as mysql from 'mysql';
 import Chirps from './chirpstable';
+import Mentions from './mentionstable'
 
 export const pool = mysql.createPool({
     connectionLimit: 10,
@@ -21,5 +22,6 @@ export const Query = (query: string, values?: Array<string | number>) => {
 }
 
 export default {
-    Chirps
+    Chirps,
+    Mentions
 }

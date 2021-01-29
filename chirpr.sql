@@ -22,9 +22,7 @@ foreign key (userid)
 references users(id);
 
 
-select 
-	c.content,
-    u.name
+select *
 from Chirps c
 join users u on u.id = c.userid;
 

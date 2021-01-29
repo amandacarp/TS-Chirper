@@ -14,16 +14,27 @@ router.get('/:id?', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
-    const id = Number(req.params.id);
+router.delete('/:chirpid', async (req, res) => {
+    const chirpid = Number(req.params.chirpid);
     try {
-        const result = await db.Chirps.delete_chirp(id);
+        const result = await db.Mentions.delete_mention(chirpid);
         res.json(result);
-        console.log(`Chirp ${id} deleted!`)
+        console.log(`Chirp ${chirpid} deleted!`)
     } catch (e) {
         res.status(500).send(e)
     }
 });
+
+router.delete('/:id'), async (req, res) => {
+    const id = Number(req.params.id);
+    try {
+        const results = await db.Chirps.delete_chirp(id);
+        res.json(results)
+        console.log(`Chirp ${id} deleted`)
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
 
 router.post('/', async (req, res) => {
     const userid = 1

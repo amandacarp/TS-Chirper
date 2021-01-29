@@ -31,7 +31,7 @@ const Chirps: React.FC = () => {
                                         <p className="card-text" id="cardBody">{chirp?.content}</p>
                                     </div>
                                     <div className="card-footer text-muted d-flex justify-content-between">
-                                        <p className="card-text">Created {moment(chirp?._created).startOf('hour').fromNow()} at {moment(chirp?._created).format('h:mm:ss a')}</p>
+                                        <p className="card-text">Last updated {moment(chirp?._created).startOf('minute').fromNow()} at {moment(chirp?._created).format('h:mm:ss a')}</p>
                                         <Link id="button" className="btn shadow" to={'/' + chirp?.id}>Admin Options</Link>
                                     </div>
                                 </div>
