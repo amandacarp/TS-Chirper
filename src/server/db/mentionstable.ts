@@ -1,6 +1,6 @@
 import { Query } from './index';
 
-const delete_mention = async (chirpid: number) => Query('DELETE FROM Mentions WHERE chirpid = ?', [chirpid]);
+const delete_mention = async (id: number) => Query('DELETE FROM Mentions WHERE chirpid = ?', [id]);
 
 
 export default {
