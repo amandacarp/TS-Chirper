@@ -2,14 +2,15 @@ import moment from 'moment';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import { Chirp } from '../../common/types';
 
 const Chirps: React.FC = () => {
 
-    const [chirps, setChirps] = useState<IChirp[]>(null);
+    const [chirps, setChirps] = useState<Chirp[]>(null);
 
     const getChirps = async () => {
         const r = await fetch("http://localhost:3000/api/chirps")
-        const chirps = await r.json();
+        const chirps: Chirp[] = await r.json();
         setChirps(chirps);
     }
 
@@ -43,12 +44,5 @@ const Chirps: React.FC = () => {
     )
 }
 
-export interface IChirp {
-    id: number,
-    content: string,
-    location: string,
-    _created: number,
-    userid: number
-}
 
 export default Chirps;

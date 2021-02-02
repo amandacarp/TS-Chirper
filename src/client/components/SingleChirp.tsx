@@ -1,19 +1,13 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { IChirp } from './Chirps'
 import Swal from 'sweetalert2'
+import { Chirp } from '../../common/types';
 
 export interface singleChirpProps extends RouteComponentProps<{ id: string }> { };
 
 const singleChirp: React.FC<singleChirpProps> = ({ history, match: { params: { id } } }) => {
-    const [chirp, setSingleChirp] = useState<IChirp>({
-        id: null,
-        content: null,
-        location: null,
-        _created: null,
-        userid: null,
-    });
+    const [chirp, setSingleChirp] = useState<Chirp>(null);
 
     //fetch api data for a single chirp
     const getSingleChirp = async () => {
@@ -72,8 +66,8 @@ const singleChirp: React.FC<singleChirpProps> = ({ history, match: { params: { i
 
 
     //use fetch and useState Hook to edit a chirp
-    const [location, setLocation] = useState('')
-    const [content, setContent] = useState('')
+    const [location, setLocation] = useState<Chirp["location"]>('')
+    const [content, setContent] = useState<Chirp["content"]>('')
 
     const editChirp = () => {
         Swal.fire({

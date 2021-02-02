@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import {Chirp} from '../../common/types'
 
 
 export interface createChirpProps extends RouteComponentProps{ };
 
 const CreateChirp: React.FC<createChirpProps> = ({ history }) => {
 
-    const [location, setLocation] = useState('')
-    const [content, setContent] = useState('')
+    const [location, setLocation] = useState<Chirp["location"]>('')
+    const [content, setContent] = useState<Chirp["content"]>('')
 
     const createChirp = async () => {
         const r = await fetch('/api/chirps', {
