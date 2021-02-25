@@ -3,7 +3,8 @@ export interface Chirp {
     userid: User["id"],
     location: string,
     content: string,
-    _created: string
+    _created: string,
+    name: User['name']
 }
 
 export interface User {
@@ -29,4 +30,24 @@ export interface SQLRes {
         protocol41: boolean,
         changedRows: number
    
+}
+
+export interface IPayload {
+    userid?: number,
+    email?: string
+}
+
+export interface IProfileInfo {
+	id?: number,
+	name?: string,
+	email?: string,
+	_created?: Date
+}
+
+export interface IProfileChirps {
+	id?: number,
+	location?: string,
+	content?: string,
+	userid?: User['id'],
+	_created?: Date
 }

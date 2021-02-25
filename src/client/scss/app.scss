@@ -2,25 +2,37 @@
     background-color: rgb(21, 32, 43);
 }
 
+#welcome{
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
 .navbar{
     font-size: 30px;
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
-    background-color: rgb(21, 32, 43);
+    background-color: rgb(34, 50, 66)!important;
 }
 
-#card{
+.textArea{
+    background-color: rgb(34, 50, 66)!important;
+    color: white
+}
+
+.card{
     font-family: 'Roboto Condensed', sans-serif;
-}
-
-#cardBody{
-    font-family: 'Architects Daughter', cursive;
+    background-color: rgb(34, 50, 66)!important;
+    color: white
 }
 
 #label{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: larger;
     color: white;
+}
+
+#svg:hover{
+    transform: scale(1.1);
 }
 
 #button{
@@ -31,23 +43,7 @@
     border: 0px;
     color: #fff;
     border-radius: 9999px;
-}
-
-#editButton {
-    font-family: 'Roboto Condensed', sans-serif;
-    background:rgb(29, 161, 242);
-    box-shadow: 0 0 1px #ccc;
-    transition: all 0.3s ease-in-out;
-    border: 0px;
-    color: #fff;
-    border-radius: 9999px;
-    font-weight: 900;
-}
-
-#editButton:hover{
-    transform: scale(1.1);
-    background: white;
-    color: black
+    text-decoration: none;
 }
 
 #button:hover{
@@ -56,24 +52,6 @@
     color: black
 }
 
-#postLink {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color:rgb(29, 161, 242);
-    color: white;
-    float: r;
-    box-shadow: 0 0 1px #ccc;
-    transition: all 0.3s ease-in-out;
-    border: 0px;
-    text-decoration: none;
-    border-radius: 9999px;
-}
-
-#postLink:hover{
-    transform: scale(1.1);
-    background:white;
-    color: black
-    
-}
 
 #chirppic{
     border-radius: 30%;
