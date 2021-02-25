@@ -113,7 +113,7 @@ const Edit = (props: EditProps) => {
         <div className="container">
             <div className="form-group">
                 <label id="label">Edit your Chirp</label>
-                <textarea rows="3" className="form-control textArea border-dark" defaultValue={chirp?.content} onChange={event => setContent(event.target.value)}></textarea>
+                <textarea rows={3} className="form-control textArea border-dark" defaultValue={chirp?.content} onChange={event => setContent(event.target.value)}></textarea>
             </div>
             <button id="button" className="btn mr-4 shadow" onClick={() => editChirp()}> Save Edit</button>
             <button id="button" className="btn mr-4 shadow" onClick={() => deleteChirp()}> Delete Chirp</button>

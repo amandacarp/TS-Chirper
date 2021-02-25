@@ -38,7 +38,7 @@ const CreateChirp = (props: createChirpProps) => {
           
       
                 <label className="mt-3" id="label">What Would You Like to Chirp?</label>
-                <textarea rows="3" className="form-control textArea border-dark" onChange={event => setContent(event.target.value)}></textarea>
+                <textarea rows={3} className="form-control textArea border-dark" onChange={event => setContent(event.target.value)}></textarea>
             </div>
 
             <button id="button" type="button" className="btn mr-4" onClick={() => createChirp()}>Chirp</button>
